@@ -69,9 +69,9 @@
         </div>
         <p>Like me you also have multiple github accounts. It is a hassle to deal with git push. The key to solve this
             issue is the ssh configuration file. When you do a git push (using ssh instead of https protocol), the ssh
-            configuration file will translate the host (<span style="color:red">firstacc</span>) into the
-            github.com and it also looks for private key id_rsa.<span style="color:red">firstacc</span> to authenticate with the id_rsa.pub (step 2)
-            to the github online account.
+            configuration file will replace the host (<span style="color:red">firstacc</span>) to 
+            github.com and it also looks for the private key id_rsa.<span style="color:red">firstacc</span>to
+            authenticate with the id_rsa.pub with the github online account.
             Below are steps to aleviate the issue.
         </p>
         <ol>
@@ -86,7 +86,7 @@
             <li>
                 <h6>Create SSH configurationi</h6>
                 <ol>
-                    cat > ~/.ssh/config<br>
+                    cat ~/.ssh/config<br>
                     # 1st account<br>
                     Host <span style="color:red">firstacc</span><br>
                     HostName github.comp<br>
@@ -104,13 +104,14 @@
                 <h6>git push</h6>
                 <ol type="A">
                     <li>cd "your 1st project"</li>
+                    <li>git init</li>
                     <li>git config user.email "your email"</li>
                     <li>git config user.name "your name"</li>
-                    <li>git add .</li>
-                    <li>git commit . -m "init"</li>
                     <li>git remote add origin git@<span
                             style="color:red">firstacc</span>:your1stProjectGithubId/yourfirstproject.git<br>
                     <li>git push -u origin master</li>
+                    <li>git add .</li>
+                    <li>git commit . -m "init"</li>
                 </ol>
             </li>
             <li>
