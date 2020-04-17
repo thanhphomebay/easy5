@@ -20,6 +20,12 @@
         body {
             padding-top: 54px;
         }
+
+        .article {
+            padding-top: 10px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
     </style>
     <meta name="description"
         content="Education,Training, Programming C#, Javascript, Angular, C, Unix, Linux command lines, meta reducer">
@@ -57,54 +63,61 @@
             </div>
         </nav>
     </header>
-    <div style="text-align: center;">
-        <h4>Git Push - Dealing With Multiple Github Accounts</h4>
-    </div>
-    Like me you also have multiple github accounts. It is a hassle to deal with git push. Below are my way to aleviate
-    the issue:
-    <ol>
-        <li>
-            <h6>Generate ssh key pair</h6>
-            For each github account, generate an ssh key pair: ssh-keygen -t rsa -C "your github id"
-        </li>
-        <li>
-            <h6>Copy the public key to your github account, rename the private key ~/.ssh/id_rsa to
-                ~/.ssh/id_rsa.<span style="color:red">firstacc</span></h6>
-        </li>
-        <li>
-            <h6>Create SSH configurationi</h6>
-            <ol>
-                cat > ~/.ssh/config<br>
-                # 1st account<br>
-                Host <span style="color:red">firstacc</span><br>
-                HostName github.comp<br>
-                User git<br>
-                IdentityFile ~/.ssh/id_rsa.firstacc<br>
+    <div class="article">
+        <div style="text-align: center;">
+            <h4>Git Push - Dealing With Multiple Github Accounts In The Same Machine</h4>
+        </div>
+        <p>Like me you also have multiple github accounts. It is a hassle to deal with git push. The key to solve this
+            issue is the ssh configuration file. When you do a git push (using ssh instead of https protocol), the ssh
+            configuration file will translate the host (<span style="color:red">firstacc</span>) into the
+            github.com and it also looks for private key id_rsa.<span style="color:red">firstacc</span> to authenticate with the id_rsa.pub (step 2)
+            to the github online account.
+            Below are steps to aleviate the issue.
+        </p>
+        <ol>
+            <li>
+                <h6>Generate ssh key pair</h6>
+                For each github account, generate an ssh key pair: ssh-keygen -t rsa -C "your github id"
+            </li>
+            <li>
+                <h6>Copy the public key to your github account, rename the private key ~/.ssh/id_rsa to
+                    ~/.ssh/id_rsa.<span style="color:red">firstacc</span></h6>
+            </li>
+            <li>
+                <h6>Create SSH configurationi</h6>
+                <ol>
+                    cat > ~/.ssh/config<br>
+                    # 1st account<br>
+                    Host <span style="color:red">firstacc</span><br>
+                    HostName github.comp<br>
+                    User git<br>
+                    IdentityFile ~/.ssh/id_rsa.firstacc<br>
 
-                # 2nd account<br>
-                Host secondacc<br>
-                HostName github.com<br>
-                User git<br>
-                IdentityFile ~/.ssh/id_rsa.secondacc<br>
-            </ol>
-        </li>
-        <li>
-            <h6>git push</h6>
-            <ol type="A">
-                <li>cd "your 1st project"</li>
-                <li>git config user.email "your email"</li>
-                <li>git config user.name "your name"</li>
-                <li>git add .</li>
-                <li>git commit . -m "init"</li>
-                <li>git remote add origin git@<span
-                        style="color:red">firstacc</span>:your1stProjectGithubId/yourfirstproject.git<br>
-                <li>git push -u origin master</li>
-            </ol>
-        </li>
-        <li>
-            Done :)
-        </li>
-    </ol>
+                    # 2nd account<br>
+                    Host secondacc<br>
+                    HostName github.com<br>
+                    User git<br>
+                    IdentityFile ~/.ssh/id_rsa.secondacc<br>
+                </ol>
+            </li>
+            <li>
+                <h6>git push</h6>
+                <ol type="A">
+                    <li>cd "your 1st project"</li>
+                    <li>git config user.email "your email"</li>
+                    <li>git config user.name "your name"</li>
+                    <li>git add .</li>
+                    <li>git commit . -m "init"</li>
+                    <li>git remote add origin git@<span
+                            style="color:red">firstacc</span>:your1stProjectGithubId/yourfirstproject.git<br>
+                    <li>git push -u origin master</li>
+                </ol>
+            </li>
+            <li>
+                Done :)
+            </li>
+        </ol>
+    </div>
     <div class="fb-comments" data-href="http://easy5.net/learnEnglish/headlinesnews/april2020/april162020.html"
         data-width="500" data-numposts="5"></div>
 </body>
