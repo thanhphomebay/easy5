@@ -69,9 +69,9 @@
         </div>
         <p>Like me you also have multiple github accounts. It is a hassle to deal with git push. The key to solve this
             issue is the ssh configuration file. When you do a git push (using ssh instead of https protocol), the ssh
-            configuration file will replace the host (<span style="color:red">firstacc</span>) to 
-            github.com and it also looks for the private key id_rsa.<span style="color:red">firstacc</span>to
-            authenticate with the id_rsa.pub with the github online account.
+            configuration file will replace the host <span style="color:red">firstacc</span> with
+            github.com and it also looks for the private key id_rsa.<span style="color:red">firstacc</span> to
+            authenticate with the id_rsa.pub on github account.
             Below are steps to aleviate the issue.
         </p>
         <ol>
@@ -113,6 +113,9 @@
                     <li>git add .</li>
                     <li>git commit . -m "init"</li>
                 </ol>
+            </li>
+            <li>
+                <h6>Repeat step 1 to 3 for the 2nd, 3rd and so on github account</h6>
             </li>
             <li>
                 Done :)
