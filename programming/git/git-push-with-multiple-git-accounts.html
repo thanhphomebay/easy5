@@ -60,13 +60,16 @@
     Like me you also have multiple github accounts. It is a hassle to deal with git push. Below are my way to aleviate
     the issue:
     <ol>
-        <li><h6>Generate ssh key pair</h6>
-            For each github account, generate an ssh key pair: ssh-keygen -t rsa -C "your github id"
+        <li>
+            <h6>Generate ssh key pair</h6>
+            For each github account, generate an ssh key pair: ssh-keygen -t rsa -C "your github id"<br>
         </li>
         <li>
-           <h6>Copy the public key to your github account, rename the private key ~/.ssh/id_rsa to ~/.ssh/id_rsa.githubid</h6>
+            <h6>Copy the public key to your github account, rename the private key ~/.ssh/id_rsa to
+                ~/.ssh/id_rsa.githubid</h6>
         </li>
-        <li><h6>Create SSH configurationi</h6>
+        <li>
+            <h6>Create SSH configurationi</h6>
             cat > ~/.ssh/config<br>
             # 1st account<br>
             Host <span style="color:red">firstacc</span><br>
@@ -80,15 +83,18 @@
             User git<br>
             IdentityFile ~/.ssh/id_rsa.secondacc<br>
         </li>
-        <li><h6>git push</h6>
-            cd "your 1st project"<br>
-            git config user.email "your email"<br>
-            git config user.name "your name"<br>
-            git add .<br>
-            git commit . -m "init"<br>
-            git remote add origin git@<span style="color:red">firstacc</span>:your1stProjectGithubId/yourfirstproject.git<br>
-            git push -u origin master<br>
-
+        <li>
+            <h6>git push</h6>
+            <ol type="A">
+                <li>cd "your 1st project"</li>
+                <li>git config user.email "your email"</li>
+                <li>git config user.name "your name"</li>
+                <li>git add .</li>
+                <li>git commit . -m "init"</li>
+                <li>git remote add origin git@<span
+                        style="color:red">firstacc</span>:your1stProjectGithubId/yourfirstproject.git<br>
+                <li>git push -u origin master</li>
+            </ol>
         </li>
         <li>
             Done :)
