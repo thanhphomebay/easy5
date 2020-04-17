@@ -29,6 +29,9 @@
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
     <header>
         <!--
         <nav class="navbar fixed-top navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
@@ -62,26 +65,28 @@
     <ol>
         <li>
             <h6>Generate ssh key pair</h6>
-            For each github account, generate an ssh key pair: ssh-keygen -t rsa -C "your github id"<br>
+            For each github account, generate an ssh key pair: ssh-keygen -t rsa -C "your github id"
         </li>
         <li>
             <h6>Copy the public key to your github account, rename the private key ~/.ssh/id_rsa to
-                ~/.ssh/id_rsa.githubid</h6>
+                ~/.ssh/id_rsa.<span style="color:red">firstacc</span></h6>
         </li>
         <li>
             <h6>Create SSH configurationi</h6>
-            cat > ~/.ssh/config<br>
-            # 1st account<br>
-            Host <span style="color:red">firstacc</span><br>
-            HostName github.comp<br>
-            User git<br>
-            IdentityFile ~/.ssh/id_rsa.firstacc<br>
+            <ol>
+                cat > ~/.ssh/config<br>
+                # 1st account<br>
+                Host <span style="color:red">firstacc</span><br>
+                HostName github.comp<br>
+                User git<br>
+                IdentityFile ~/.ssh/id_rsa.firstacc<br>
 
-            # 2nd account<br>
-            Host secondacc<br>
-            HostName github.com<br>
-            User git<br>
-            IdentityFile ~/.ssh/id_rsa.secondacc<br>
+                # 2nd account<br>
+                Host secondacc<br>
+                HostName github.com<br>
+                User git<br>
+                IdentityFile ~/.ssh/id_rsa.secondacc<br>
+            </ol>
         </li>
         <li>
             <h6>git push</h6>
@@ -100,6 +105,8 @@
             Done :)
         </li>
     </ol>
+    <div class="fb-comments" data-href="http://easy5.net/learnEnglish/headlinesnews/april2020/april162020.html"
+        data-width="500" data-numposts="5"></div>
 </body>
 
 </html>
