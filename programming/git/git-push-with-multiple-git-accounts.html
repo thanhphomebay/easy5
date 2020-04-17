@@ -60,35 +60,38 @@
     Like me you also have multiple github accounts. It is a hassle to deal with git push. Below are my way to aleviate
     the issue:
     <ol>
-        <li>
+        <li><h6>Generate ssh key pair</h6>
             For each github account, generate an ssh key pair: ssh-keygen -t rsa -C "your github id"
         </li>
         <li>
             Copy the public key to your github account, rename the private key ~/.ssh/id_rsa to ~/.ssh/id_rsa.githubid
         </li>
         <li>
-            cat > ~/.ssh/config
-            # 1st account
-            Host firstacc
-            HostName github.com
-            User git
-            IdentityFile ~/.ssh/id_rsa.firstacc
+            cat > ~/.ssh/config<br>
+            # 1st account<br>
+            Host firstacc<br>
+            HostName github.comp<br>
+            User git<br>
+            IdentityFile ~/.ssh/id_rsa.firstacc<br>
 
-            # 2nd account
-            Host secondacc
-            HostName github.com
-            User git
-            IdentityFile ~/.ssh/id_rsa.secondacc
+            # 2nd account<br>
+            Host secondacc<br>
+            HostName github.com<br>
+            User git<br>
+            IdentityFile ~/.ssh/id_rsa.secondacc<br>
         </li>
         <li>
-            cd "your 1st project"
-            git config user.email "your email"
-            git config user.name "your name"
-            git add .
-            git commit . -m "init"
-            git remote add origin git@firstacc:your1stProjectGithubId/yourfirstproject.git
-            git push -u origin master
+            cd "your 1st project"<br>
+            git config user.email "your email"<br>
+            git config user.name "your name"<br>
+            git add .<br>
+            git commit . -m "init"<br>
+            git remote add origin git@firstacc:your1stProjectGithubId/yourfirstproject.git<br>
+            git push -u origin master<br>
 
+        </li>
+        <li>
+            Done :)
         </li>
     </ol>
 </body>
