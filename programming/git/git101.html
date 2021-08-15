@@ -71,7 +71,13 @@
         </p>
         <ol>
             <li>
-                <h6>Upload public SSH key to AWS IAM user's account under GIT</h6>
+                <h6>Upload public SSH key to AWS IAM user's account under GIT and notice the SSH Key ID</h6>
+            </li>
+            <li>
+                <h6>Create ~/.ssh/config to provide codecommit info and make sure the permissions are set to 600 </h6>
+                <span style="color:blue">Host git-codecommit.*.amazonaws.com</span>
+                <span style="color:blue">User SSH KEY ID</span>
+                <span style="color:blue">IdentityFile ~/.ssh/id_rsa</span>
             </li>
             <li>
                 <h6>CodeCommit -> Create a new empty repository</h6>
@@ -89,7 +95,7 @@
                     <li>Provide git the address of the remote repository server (origin)<br><span style="color:blue">git remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/DemoRepo</span></li>
                     <li><span style="color:blue">git add .</span></li>
                     <li><span style="color:blue">git commit . -m "init"</span></li>
-                    <li>Now create a branch name <span style="color:teal">master or test</span> on the fly at the remote server then push code to it <br><span style="color:blue">git push -u origin master</span></li>
+                    <li>Now create a branch name <span style="color:blueviolet">master or test</span> on the fly at the remote server then push code to it <br><span style="color:blue">git push -u origin master</span></li>
                 </ol>
             </li>
             <li>
