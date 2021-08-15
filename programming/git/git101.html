@@ -82,12 +82,14 @@
                 <ol type="A">
                     <li>cd "DemoRepo"</li>
                     <li>git init</li>
-                    <li>git config user.email "your email"</li>
-                    <li>git config user.name "your name"</li>
-                    <li>Provide git the address of the remote repository server (origin)<br>git remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/DemoRepo</li>
+                    <li>Tell git who you are
+                        <span style="color:blue">git config user.email "your email"</span>
+                        <span style="color:blue">git config user.name "your name"</span>
+                    </li>
+                    <li>Provide git the address of the remote repository server (origin)<span style="color:blue">git remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/DemoRepo</span></li>
                     <li>git add .</li>
                     <li>git commit . -m "init"</li>
-                    <li>Now create a master branch at the remote server then push code to it <br>git push -u origin master</li>
+                    <li>Now create a master branch at the remote server then push code to it <br><span style="color:blue">git push -u origin master</span></li>
                 </ol>
             </li>
             <li>
