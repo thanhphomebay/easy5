@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            padding-top: 54px;
+        }
+
+        .article {
+            padding-top: 10px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    </style>
+    <meta name="description"
+        content="Education,Training, Programming C#, Javascript, Angular, C, Unix, Linux command lines, meta reducer">
+    <title>
+        Git 101
+    </title>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
+    <header>
+        <!--
+        <nav class="navbar fixed-top navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
+        -->
+        <nav class="navbar fixed-top navbar-expand navbar-light" style="background-color: #e3f2fd;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="../../">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="../">Programming</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Git</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="article">
+        <div style="text-align: center;">
+            <h4>Git 101- Basic Git Command</h4>
+        </div>
+        <p>I used AWS CodeCommit for the tutorial
+        </p>
+        <ol>
+            <li>
+                <h6>Upload public SSH key to AWS IAM user's account under GIT</h6>
+            </li>
+            <li>
+                <h6>CodeCommit -> Create a new empty repository</h6>
+                <span>The repository URL will be: ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/DemoRepo</span>
+            </li>
+            <li>
+                <h6>Push your code to git repo for the very first time</h6>
+                <ol type="A">
+                    <li>cd "DemoRepo"</li>
+                    <li>git init</li>
+                    <li>git config user.email "your email"</li>
+                    <li>git config user.name "your name"</li>
+                    <li>Provide git the address of the remote repository server (origin)<br>git remote add origin ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/DemoRepo</li>
+                    <li>git add .</li>
+                    <li>git commit . -m "init"</li>
+                    <li>Now create a master branch at the remote server then push code to it <br>git push -u origin master</li>
+                </ol>
+            </li>
+            <li>
+                <h6>Done :)</h6>
+            </li>
+        </ol>
+    </div>
+    <div class="fb-comments" data-href="http://easy5.net/learnEnglish/headlinesnews/april2020/april162020.html"
+        data-width="500" data-numposts="5"></div>
+</body>
+
+</html>
