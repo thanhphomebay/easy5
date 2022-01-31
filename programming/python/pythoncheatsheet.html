@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+                background-color: powderblue;
+        }
+    .heading {
+      color: blue;
+      font-weight: bold;
+      font-size: 20px;
+      display: block;     
+    }
+    .subheading{
+      font-weight: bold;
+      font-size: 15px;
+      
+    }
+ 
+    </style>
+        <meta name="description" content="Education,Training, Programming C#, Javascript, Angular, C, Unix, Linux command lines, meta reducer">
+        <title>
+            Programming C#, Javascript, Angular, C, Unix, Linux command lines
+        </title>
+
+
+   <link href='http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css' rel='stylesheet' type='text/css'/>
+   <link href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ 
+
+
+</head>
+
+<body>
+    <header>
+        <!--
+        <nav class="navbar fixed-top navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
+        -->
+        <nav class="navbar fixed-top navbar-expand navbar-light" style="background-color: #e3f2fd;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="../../">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="../">Programming</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Python Cheat Sheet</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+
+  <h2 style="text-align:center;color:Brown">Python Cheatsheet</h2>
+<div class="container">
+  <span class="heading">Variables</span>
+ 
+<pre class="prettyprint">
+                x,y,b,name=(1,2.5,True,'Brad')
+                print(x,y,b,name,type(name))
+                #output: 1 2.5 True Brad <class 'str'>
+</pre>
+ 
+ 
+ 
+  <span class="heading">String</span>
+<pre class="prettyprint">
+                name='Brad'
+                age = 37
+                #Arguments by position
+                print('My name is {n} and {a} years old',format(n=name,a=age))
+                
+                #F-string version 3.6+
+                print(f'My name is {name} and {age} years old')
+ 
+                s.split() #split string into array 
+                s.isnumeric()
+                s.isalpha()
+</pre>
+ 
+  <span class="heading">List/Array</span>
+<pre class="prettyprint">
+                #create list
+                numbers = [1, 2, 3, 4, 5]
+                fruits = ['orange','banana','coconut']
+ 
+                #create list use a constructor
+                numbers2 = list((1,2,3,4,5))
+                fruits[0]='durian'
+                fruits.append('mango')
+                fruits.remove('coconut')
+                fruits.insert('pearl')
+                fruits.pop(2)
+                fruits.reverse()
+                fruits.sort()
+                fruits.sort(reverse=True)
+                print (fruits)
+</pre>
+ 
+<span class="heading">Tuple: collection that is ordered and unchangeble.  Allows duplicate numbers</span>
+<pre class="prettyprint">
+                fruits=('Apple','Oranges','Durian')
+                fruits2=tuple(('Apple','Oranges','Durian'))
+                fruits3=('leech') #it is a string without comma, basically, single value needs trailing comma
+                fruits4=('leech',) # it is a tuple
+ 
+                del fruits4 #will remove the variable and the runtime message will be undefined
+</pre>
+ 
+ 
+  <span class="heading">Set: collection that is unordered and unindexed.  No duplicate members</span>
+<pre class="prettyprint">
+                fruits= {'orange','banana','coconut'}                                        
+                #check if in set
+                print('banana' in fruits) #return True/False
+                fruits.add('almond')
+                fruits.remove('almond')
+                fruits.clear() #return empty set
+                fruits.add('almond') #wont' get any error, it just won't add
+</pre>
+ 
+  <span class="heading">Dictionary: collection which is unordred. changeable and index. No duplicate members</span>
+<pre class="prettyprint">
+                fruits= {'name': 'orange','sweet':True, 'weight':10}
+                print(fruits,type(fruits))
+                
+                #Use constructor
+                fruits2=dict(name='orange',sweet:True, weight:10)
+ 
+                #add key/value
+                fruits['salt']=False
+ 
+                #Get keys
+                fruits.keys()
+ 
+                #get dict items
+                fruits.items
+ 
+                #copy dic
+                fruitsCopy=fruits.copy()
+                fruitsCopy['location']='tropical'
+ 
+                #remove
+                del(fruits['salt']) #will remove the field
+                fruits.pop('sweet')# will remove sweet field
+ 
+                #clear
+                fruits.clear() #print empty {}
+                
+                #List of dict
+                fruits = [
+                                {'name':'orange','sweet':True,'weight':10},
+                                {'name':'banana','sweet':True,'weight':10}
+                ]
+                print(fruits[1]['name'])
+</pre>
+ 
+  <span class="heading">Function: don't use curly bracket, just use colon and indentation with tabs or spaces</span>
+<pre class="prettyprint">
+                def sayHello(name='default name'):
+                                print(f'Hello {name}')
+ 
+                def sum(x,y):
+                                return x+y
+ 
+ 
+                Lamda function /same as JS arrow function
+                sum = lambda x,y : x + y #implicate return
+                print(sum(1,2)) 
+</pre>
+ 
+  <span class="heading">Conditional</span>
+<pre class="prettyprint">
+                x, y = (10,50)
+                if x > y:
+                                print(f'{x} is greater than {y}')
+                elif:
+                                print('f{x} is equal to {y}')
+                else:
+                                print(f'{x} is less than {y}')
+ 
+                #and/or/not
+                if not(x==y):
+                                print(f'{x} is not equal to {y}')
+</pre>
+ 
+  <span class="heading">Membership: not, not in</span>
+<pre class="prettyprint">
+                x=1
+                numbers=[1,2,3,4,5]
+                if x in numbers:
+                                print (x in numbers) #print True
+</pre>
+ 
+  <span class="heading">Identity Operators: is, is not (compare the objects)</span>
+<pre class="prettyprint">
+                x = ["apple", "banana"]
+                y = ["apple", "banana"]
+                z = x
+ 
+                print(x is z)          # returns True because z is the same object as x
+ 
+                print(x is y)         # returns False because x is not the same object as y, even if they have the same content
+ 
+                print(x == y)        # to demonstrate the difference betweeen "is" and "==": this comparison returns True because x is equal to y
+ 
+</pre>
+ 
+  <span class="heading">For Loop</span>
+<pre class="prettyprint">
+                fruits = ["apple", "banana","coconut"]
+                for f in fruits:
+                                if f =='apple':
+                                                break #exit the loop
+                                                continue #will skip item
+                                print(f'fruit is {f}')
+                                
+                #RANGE
+                for f in range(len(fruits)):
+                                print(fruits[f])
+                for i in range(0,11):
+                                print(f'number: {i}') #print from 0 to 10
+</pre>
+ 
+  <span class="heading">While Loop</span>
+<pre class="prettyprint">
+                i=0
+                while i< 10:
+                                print(f'count: {i}')
+                                i +=1
+</pre>
+ 
+  <span class="heading">Module: a file containing a set of functions to include in your application</span>
+<pre class="prettyprint">
+                import datetime
+                today = datetime.date.today()
+                print(today) #2022-01-29
+ 
+                #OR --- narrow down
+ 
+                from datetime import date
+                today - date.today
+                print(today)
+ 
+</pre>
+ 
+  <span class="heading">Class: almost everything in Python is an object</span>
+<pre class="prettyprint">
+                Class User:
+                                #constructor
+                                def __init__(self,name):
+                                                self.name=name
+                                #create method
+                                def sayName(self)
+                                                return f'name is {self.name}'       
+                #init object
+                brad = User('Brad Newman')
+                print(brad.sayName())
+                #Extend:
+                Class Customer(User):
+                                def __init__(self,name,group)
+                                self.name=name
+                                self.group=group
+ 
+                                def sayGroup(self)
+                                                return f'my group is {self.group}'
+ 
+                
+                elon=Customer('Musk','Tesla')
+ 
+</pre>
+ 
+  <span class="heading">File operation</span>
+<pre class="prettyprint">
+                myFile=open('myfile.txt','w')#will create an empty file
+ 
+                print('Name: ',myFile.name)
+                print('Is closed:',myFile.closed)
+ 
+                myFile.write("what's up")
+                myFile.write('what good')
+                myFile.close()
+ 
+                #append to file
+                myFile = open('myfile.txt','a')
+                myFile.write('append some more')
+                myFile.close()
+</pre>
+ 
+  <span class="heading">JSON</span>
+<pre class="prettyprint">
+                import json
+                
+                jJson='{"first":"jason","last":"Doe"}'
+                #Parse to dict
+                user = json.loads(jJson)
+                print(user)
+                print(user['first'])
+ 
+                #Dict to Json
+                fruit={'type':'banana','edible':True}
+                fruitJson=json.dump(fruit)
+                print(fruitJson)
+</pre>
+ 
+  <span class="heading">Deep Copy:       A shallow copy is shallow because it only copies the object but not its child objects. 
+                                Instead, the child objects refer to the original object’s child objects.
+                </span>
+<pre class="prettyprint">
+ 
+                # To Verify that both objects really refer to the same object
+                print(id(ori))
+                print(id(cpy))
+ 
+                import copy
+                # Lists inside a list
+                ori= [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+ 
+                # Let's take a shallow copy of ori
+                cpy = cpy.copy(ori)
+                cpy = ori.copy() #same as above
+                cpy = list(ori) # same as above
+                cpy = ori[:] #list slicing operator-copy from start to end element, as as above, shallow copy
+ 
+                print(id(ori), id(cpy)) # 140315092110600 140315092266184         
+                # ==> It seems as if cpy was a completely independent copy of ori. But it is not.
+                print(id(ori[0]), id(cpy[0]))# 140315092110664 140315092110664
+                
+                # Deep copy
+                cpy=copy.deepcopy(ori)
+ 
+</pre>
+ 
+  <span class="heading">Context Mananger: will take care of creating and releasing resource correctly</span>
+<pre class="prettyprint">
+                with open('notes.txt','w') as file:
+                                file.write('hello file')
+                
+                #V.S below (not recommended)
+                file = open('notes.txt','w')
+                try:
+                                file.write('hello file')
+                finally:
+                                file.close()
+ 
+                from threading import Lock
+                with lock:
+                  #..do something
+</pre>
+ 
+ 
+  <span class="heading">Asterick * use case</span>
+<pre class="prettyprint">
+                <span class="subheading">Multiplication *</span>
+                <span class="subheading">Power operation 2 **4 ~ 2^4 = 16</span>
+                <span class="subheading">Repeated elements</span>
+                                mylist = [0]* 5 #create a list of 5 elements of 0 [0,0,0,0,0]
+                                mylist = [0,1] * 5# [0,1,0,1,0,1,0,1,0,1] 
+                                mytuple= (0,1) * 5# (0,1,0,1,0,1,0,1,0,1)
+                                mystr= "AB" *5 # "ABABABABAB"
+                <span class="subheading">Function arguments</span> 
+                                def foo(a,b,*mytuple, **mydictionary): 
+                                                for t in mytuple:
+                                                                print(t)
+                                                for k in mydictionary:
+                                                                print(k,mydictionary[k])
+ 
+                                foo(1,2,33,44,55,66,six=6,seven=7,eight=8)  #for tuple and dict, pass in as many as you like
+                                foo(1,2,33,44,55,66,77,six=6,seven=7,eight=8,nine=9)
+ 
+                
+                                def bar(a,b,*,c):
+                                                #...
+                                bar(1,2,c=3) # the last item must be keyword only arguments
+                
+                <span class="subheading">Unpack a list</span>
+                                def foo(a,b,c):
+                                               #something
+                                myList=[1,2,3]
+                                myTuple=(1,2,3) 
+                                myDict={'a':1,'b':2,'c':3}
+                                foo(*myList) #will work if match # of parameters
+                                foo(*myTuple)
+                                foo(**myDict) # keys must match with the name of parameters, and # of element must match # parameters
+ 
+                <span class="subheading">Unpack containers: convert into a list</span>
+                                myList=[1,2,3,4]
+                                *f,l=myList          
+                                print(f,l) # [1,2,3] 4
+ 
+                                myList=[1,2,3,4]
+                                f,*l=myList          
+                                print(f,l) # 1 [2,3,4]
+ 
+                                myList=[1,2,3,4]
+                                f,*m,l=myList    
+                                print(f,m,l) # 1 [2,3] 4
+ 
+                                myList=[1,2,3,4,5]
+                                f,*m,sl,l=myList 
+                                print(f,m,sl,l) # 1 [2,3] 4 5
+ 
+                                myTuple=(1,2,3,4)
+                                *f,l=myTuple
+                                print(f,l)= [1,2,3] 4
+ 
+                <span class="subheading">Merge lists</span>
+                                myTuple = (1,2,3)
+                                myList=[4,5,6]
+                                mySet={7,8,9}
+                                newList=[*myTuple,*myList,*mySet]                                      
+                                print(newList) = [1,2,3,4,5,6,7,8,9]
+ 
+                <span class="subheading">Also merge dictionary</span>
+                                dictA={'a':1,'b':2}
+                                dictB={'c':3,'d':4}
+                                myDict={**dictA,**dictB}
+                                print(myDict) # {'a':1,'b':2,'c':3,'d':4}
+</pre>
+</div>
+   <script src='http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js'></script>
+</body>
+
+</html>
